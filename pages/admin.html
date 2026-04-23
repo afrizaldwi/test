@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+    <link rel="stylesheet" href="../css/globals.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="admin-section" class="dashboard">
+            <div class="d-flex">
+                <div class="dashboard-nav" id="sidebar">
+                    <div class="d-flex flex-between w-full">
+                        <h2 class="dashboard-title">Kost Admin</h2>
+                        <button class="hamburger-menu" onclick="toggleButton()">&#9776;</button>
+                    </div>
+                    <div class="d-flex flex-1 nav-menu w-full">
+                        <a href="#" onclick="showAdminPage('beranda')">Beranda</a>
+                        <a href="#" onclick="showAdminPage('user')">Manajemen User</a>
+                        <a href="#" onclick="showAdminPage('kamar')">Data Kamar</a>
+                        <a href="#" onclick="showAdminPage('sewa')">Kontrak Sewa</a>
+                        <a href="#" onclick="showAdminPage('tagihan')">Data Tagihan</a>
+                        <a href="#" onclick="showAdminPage('tamu')">Log Tamu</a>
+                        <a href="#" onclick="showAdminPage('keluhan')">Keluhan</a>
+                        <div class="flex-grow"></div>
+                        <button onclick="logout()" class="btn w-full">Logout</button>
+                    </div>
+                </div>
+
+                <div id="admin-content" class="flex-1">
+                    <div class="admin-header">
+                        <h1>Sistem Informasi Manajemen Kost</h1>
+                        <p>Login sebagai: <strong id="admin-display-name"></strong></p>
+                    </div>
+
+                    <div id="admin-page-beranda" class="admin-page">
+                        <h2 class="mb-15">Ringkasan Operasional</h2>
+                        <div class="d-flex flex-between mb-15">
+                            <button class="btn btn-export" onclick="exportCSV()">
+                                ⬇ Export CSV
+                            </button>
+                        </div>
+                        <div class="stats-row">
+                            <div class="d-flex card stat-card">
+                                <h3>Pengeluaran Bulan Ini</h3>
+                                <p class="stat-num" id="stat-pengeluaran"></p>
+                            </div>
+                            <div class="d-flex card stat-card">
+                                <h3>Jumlah Tamu</h3>
+                                <p class="stat-num" id="stat-tamu"></p>
+                            </div>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="d-flex card stat-card">
+                                <h3>Total Kamar</h3>
+                                <p class="stat-num" id="stat-total-kamar"></p>
+                            </div>
+                            <div class="d-flex card stat-card">
+                                <h3>Kamar Terisi</h3>
+                                <p class="stat-num" id="stat-kamar-terisi"></p>
+                            </div>
+                            <div class="d-flex card stat-card">
+                                <h3>Kamar Kosong</h3>
+                                <p class="stat-num" id="stat-kamar-tersedia"></p>
+                            </div>
+                            <div class="d-flex card stat-card">
+                                <h3>Keluhan Baru</h3>
+                                <p class="stat-num" id="stat-keluhan"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="admin-page-user" class="admin-page hidden">
+                        <h2>Data Pengguna Sistem</h2>
+                    </div>
+
+                    <div id="admin-page-kamar" class="admin-page hidden">
+                        <h2>Detail Inventaris Kamar</h2>
+                    </div>
+
+                    <div id="admin-page-sewa" class="admin-page hidden">
+                        <h2>Detail Kontrak Sewa</h2>
+                    </div>
+
+                    <div id="admin-page-tagihan" class="admin-page hidden">
+                        <h2>Detail Tagihan</h2>
+                    </div>
+
+                    <div id="admin-page-tamu" class="admin-page hidden">
+                        <h2>Catatan Kunjungan Tamu</h2>
+                    </div>
+
+                    <div id="admin-page-keluhan" class="admin-page hidden">
+                        <h2>Laporan Masalah & Keluhan</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+
+</html>

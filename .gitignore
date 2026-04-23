@@ -1,0 +1,11 @@
+# Environment
+server/.env
+
+# Logs
+server/logs/*
+
+# Editor
+.vscode/
+.idea/
+
+hash.phpz

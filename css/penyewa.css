@@ -1,0 +1,23 @@
+.penyewa-content {
+  flex: 1;
+  padding: 2rem;
+}
+.penyewa-info-card {
+  width: 100%;
+  height: auto;
+  margin-top: 2rem;
+  align-items: flex-start;
+}
+.info-divider {
+  width: 100%;
+  margin: 1rem 0;
+}
+@media screen and (max-width: 768px) {
+  .penyewa-content {
+    padding: 1rem;
+  }
+  .penyewa-info-card {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}
